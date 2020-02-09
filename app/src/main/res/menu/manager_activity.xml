@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:title="添加城市"
+    android:id="@+id/manager_add"
+    />
+    <item
+        android:title="删除城市"
+        android:id="@+id/manager_delete"
+        />
+    <item
+        android:title="设置默认城市"
+        android:id="@+id/manager_default"
+        />
+</menu>

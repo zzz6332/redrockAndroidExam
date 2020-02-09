@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background_add"
+    android:orientation="vertical">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_marginTop="10dp"
+        android:id="@+id/add_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:theme="?attr/actionBarTheme"
+        app:title="添加城市"
+        android:paddingLeft="10dp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="80dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_gravity="right"
+                android:text="+"
+                android:textSize="25dp"
+                android:gravity="center"
+                android:paddingLeft="8dp"
+                android:textColor="@color/colorBlack"
+                android:paddingBottom="10dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="7"
+                android:id="@+id/edit_city"
+                android:hint="请输入城市名字"
+                />
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/bt_add_city"
+                android:background="@android:color/transparent"
+                android:text="添加"
+                android:layout_weight="2"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

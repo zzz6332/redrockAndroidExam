@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:id="@+id/tv_default_city"
+            android:textSize="24dp"
+            android:paddingTop="13dp"
+            android:textColor="@color/colorBlack"
+            android:text="重庆"
+            android:gravity="right"
+            android:paddingBottom="13dp"
+            android:paddingRight="13dp"
+            />
+        <View
+            android:layout_marginLeft="13dp"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlack"
+            />
+        <CheckBox
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:id="@+id/checkbox_default"
+            android:layout_marginLeft="25dp"
+            />
+
+    </LinearLayout>
+    <View
+        android:layout_width="350dp"
+        android:layout_height="1dp"
+        android:background="@color/colorBlack"
+        android:layout_gravity="center"
+        />
+
+</LinearLayout>
