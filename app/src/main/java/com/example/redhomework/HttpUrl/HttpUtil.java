@@ -33,7 +33,6 @@ public class HttpUtil {
     private static String can_see;
     private static String temp_now;
     private static String temp_physical;
-    private static Boolean isAir = false;
 
     public static void sendHttpRequestForNow(final String address, final HttpCallBack httpCallBackListener) {
 
@@ -171,6 +170,7 @@ public class HttpUtil {
                     JSONArray jsonArray = jsonObject.getJSONArray("HeWeather6");
                     JSONObject jsonObject1 = jsonArray.getJSONObject(0);
                     String status = jsonObject1.getString("status");
+                    Boolean isAir = false;
                     if (status.equals("ok")) {
                         isAir = true;
                         JSONObject jsonObject2 = jsonObject1.getJSONObject("air_now_city");
