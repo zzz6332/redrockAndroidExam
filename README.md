@@ -12,7 +12,7 @@
 
 1.5.在无网络情况下，将加载上一次有网络时缓存的数据.
 
-### 2.使用步骤
+### 2.使用步骤 (gif图可能要加载很久,太慢啦...)
 2.1.首次进入app时，默认城市为重庆，用户可以在随后的操作中设置自己的默认城市.
 
 ![main](https://github.com/zzz6332/redrockAndroidExam/blob/master/gif/main.gif)
