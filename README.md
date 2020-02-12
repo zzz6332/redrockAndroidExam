@@ -37,10 +37,13 @@ PS：在没有添加城市的情况下进入删除城市和设置默认城市的
 
 ![no_add](https://github.com/zzz6332/redrockAndroidExam/blob/master/gif/no_add_city.gif)
 
-2.3.添加城市了之后，可以在管理城市的界面点击任一城市，就可以跳转到点击的城市的具体天气情况界面(主活动).
+2.3.添加城市了之后，可以在管理城市的界面点击任一城市，就可以跳转到点击的城市的具体天气情况界面(主活动).   
 
 ![adapter_to_main](https://github.com/zzz6332/redrockAndroidExam/blob/master/gif/manager_to_main.gif)
 
+PS:晴天的时候是这样的👇，没有找到其他天气的城市所以就没有图了....
+
+![sun](https://github.com/zzz6332/redrockAndroidExam/blob/master/gif/sun.jpg)
 2.4.如果添加了错误的城市，会显示添加错误
 
 ![add_wrong](https://github.com/zzz6332/redrockAndroidExam/blob/master/gif/add_wrong_city.gif)
