@@ -1,6 +1,7 @@
 package com.example.redhomework.Activity;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -20,12 +21,10 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.redhomework.Class.CityManager;
+
 import com.example.redhomework.R;
-import com.example.redhomework.RecyclerView.CityAdapter;
 import com.example.redhomework.RecyclerView.DeleteAdapter;
 import com.example.redhomework.Tools.ActivityCollector;
-import com.example.redhomework.Tools.Internet;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -61,8 +60,6 @@ public class DeleteActivity extends AppCompatActivity {
         super.onRestart();
         list.clear();
         count = sharedPreferences.getInt("count", 0);
-        Log.d("Deleteeeeeeeeeeeeeee", "list的长度为：" + list.size() + "");
-        Log.d("Deleteeeeeeeeeeeeeee", "count为 " + count);
         if (count != 0) {
             for (int i = 1; i <= count; i++) {
                 String city = sharedPreferences.getString("city" + i, "error");//如果没有对应城市返回error字符串
@@ -73,6 +70,18 @@ public class DeleteActivity extends AppCompatActivity {
             }
         } else {
             //如果count为0（没有添加城市）
+        }
+    }
+
+    @Override
+    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        if (count == 0) {
+            toobar = findViewById(R.id.no_add_toolbar);
+            setSupportActionBar(toobar);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setHomeButtonEnabled(true);
+            toobar.setTitle("删除城市");
         }
     }
 
@@ -103,8 +112,6 @@ public class DeleteActivity extends AppCompatActivity {
             } else {
                 //如果count为0（没有添加城市）
             }
-            Log.d("Deleteeeeeeeeeeeeeee", "list的长度为：" + list.size() + "");
-
             DeleteAdapter adapter = new DeleteAdapter(DeleteActivity.this, list);
             LinearLayoutManager manager = new LinearLayoutManager(DeleteActivity.this);
             recyclerView.setLayoutManager(manager);
@@ -113,7 +120,6 @@ public class DeleteActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     delete_number = sharedPreferences.getInt("delete_number", 0);//delete_number是删除了几个城市
-                    Log.d("Deleteeeeeeeeeeeeeee", "delete_number为： " + delete_number);
                     List<Integer> delelte_number_list = new ArrayList();
                     if (delete_number != 0) {
                         for (int i = 1; i <= delete_number; i++) { //这里用list储存删除的城市的position
@@ -133,8 +139,6 @@ public class DeleteActivity extends AppCompatActivity {
                         }
                         for (int i = 1; i <= count - delete_number; i++) { //这里写入删除后的城市列表
                             editor.putString("city" + i, list.get(i - 1));
-                            Log.d("Deleteeeeeeeeeeeeeee", "list[i-1]=" + list.get(i - 1));
-                            Log.d("Deleteeeeeeeeeeeeeee", "count - delete_number为： " + (count - delete_number));
                             editor.commit();
                         }
                         editor.putInt("count", count - delete_number);
@@ -152,9 +156,6 @@ public class DeleteActivity extends AppCompatActivity {
             });
         }
         else {
-            toobar = findViewById(R.id.no_add_toolbar);
-            setSupportActionBar(toobar);
-            toobar.setTitle("删除城市");
             setContentView(R.layout.no_add_city);
             Button button = findViewById(R.id.no_add_btn);
             button.setOnClickListener(new View.OnClickListener() {

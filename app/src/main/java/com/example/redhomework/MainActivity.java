@@ -285,10 +285,11 @@ public class MainActivity extends AppCompatActivity {
 
                             @Override
                             public void OnFinishAir(List list, Boolean isAir) {
-                                if (isAir) {
+                                // 部分城市没有空气质量一栏
+                                if (isAir) {  //如果有空气质量一栏
                                     air_list = list;
                                     int size = air_list.size();
-                                    if (size != 1 ) {  //如果不是第一次进入主活动，会进入这个if，相当于更新数据
+                                    if (size != 1) {  //如果不是第一次进入主活动，会进入这个if，相当于更新数据
                                         for (int i = 0; i <= size - 2; i++) {
                                             air_list.remove(0);
                                         }
@@ -305,8 +306,7 @@ public class MainActivity extends AppCompatActivity {
                                     editor.putString("buffer_air_count", air.getAir_count());
                                     editor.putString("buffer_air_quality", air.getAir_qulity());
                                     editor.commit();
-                                }
-                                else {
+                                } else {  //如果没有空气质量一栏
                                     air_list.clear();
                                 }
                                 ///   MyAdapter adapter = new MyAdapter(mlist, air_list, lifeStyle_list);
@@ -339,8 +339,6 @@ public class MainActivity extends AppCompatActivity {
                                             }
                                         }
                                         //---对数据缓存
-                                        Log.d("eeeeee", "生活：" + lifeStyle_list.size() + list.size());
-
                                         LifeStyle style = lifeStyle_list.get(0);
                                         editor.putString("buffer_comf_txt", style.getComf_txt());
                                         editor.putString("buffer_comf_brf", style.getComf_brf());

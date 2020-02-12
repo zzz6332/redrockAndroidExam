@@ -43,7 +43,7 @@
             android:layout_height="1dp"
             android:background="#000000"
             android:layout_gravity="center"
-            android:layout_marginLeft="57dp"
+            android:layout_marginLeft="63dp"
             android:layout_marginTop="8dp"
             />
     </LinearLayout>

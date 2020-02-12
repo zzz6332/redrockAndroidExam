@@ -72,65 +72,70 @@ public class AddCityActivity extends AppCompatActivity {
         button_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String city = editText.getText().toString();
-                HttpUtil.sendHttpRequestForNow("https://free-api.heweather.net/s6/weather/now?location=" + city + "&key=69eb00f8b34e4c3cb3969e9a94416c70", new HttpCallBack() {
-                    @Override
-                    public void OnFinishNow(String location, String time, String weather, String weather_type, String can_see, String temp_now, String temp_physical, String status) {
-                        if (status.equals("ok")) { //如果有该城市
-                            int count = sharedPreferences.getInt("count", 0);
-                            Message message_success = new Message();
-                            message_success.what = TOAST_TYPE_SUCCESS;
-                            if (count == 0) {  // 如果是第一次添加城市
-                                editor.putString("city1", city);
-                                editor.putInt("count", 1);
-                                editor.putBoolean("added", true);
-                                editor.commit();
+                Boolean isInternet = Internet.networkIsavailable(AddCityActivity.this);
+                if (isInternet){ //如果有网络
+                    final String CITY = editText.getText().toString();
+                    HttpUtil.sendHttpRequestForNow("https://free-api.heweather.net/s6/weather/now?location=" + CITY + "&key=69eb00f8b34e4c3cb3969e9a94416c70", new HttpCallBack() {
+                        @Override
+                        public void OnFinishNow(String location, String time, String weather, String weather_type, String can_see, String temp_now, String temp_physical, String status) {
+                            if (status.equals("ok")) { //如果有该城市
+                                int count = sharedPreferences.getInt("count", 0);
+                                Message message_success = new Message();
+                                message_success.what = TOAST_TYPE_SUCCESS;
+                                if (count == 0) {  // 如果是第一次添加城市
+                                    editor.putString("city1", CITY);
+                                    editor.putInt("count", 1);
+                                    editor.putBoolean("added", true);
+                                    editor.commit();
+                                    editText.setText("");
+                                    handler.sendMessage(message_success);
+                                } else {  //如果添加的城市不是第一个
+                                    count++;
+                                    editor.putString("city" + count, CITY);
+                                    editor.putInt("count", count);
+                                    editor.putBoolean("added", true);
+                                    editor.commit();
+                                    editText.setText("");
+                                    handler.sendMessage(message_success);
+                                }
+                                //添加完毕后跳转到主活动
+                                Intent intent = new Intent(AddCityActivity.this, MainActivity.class);
+                                intent.putExtra("city",CITY);
+                                startActivity(intent);
+                                ActivityCollector.finishAll();
+                            } else {  //如果查找不到输入的城市
                                 editText.setText("");
-                                handler.sendMessage(message_success);
-                            } else {  //如果添加的城市不是第一个
-                                count++;
-                                editor.putString("city" + count, city);
-                                editor.putInt("count", count);
-                                editor.putBoolean("added", true);
-                                editor.commit();
-                                editText.setText("");
-                                handler.sendMessage(message_success);
+                                Message message_fail = new Message();
+                                message_fail.what = TOAST_TYPE_FAIL;
+                                handler.sendMessage(message_fail);
+
                             }
-                            //添加完毕后跳转到主活动
-                            Intent intent = new Intent(AddCityActivity.this, MainActivity.class);
-                            intent.putExtra("city",city);
-                            startActivity(intent);
-                            ActivityCollector.finishAll();
-                        } else {  //如果查找不到输入的城市
-                            editText.setText("");
-                            Message message_fail = new Message();
-                            message_fail.what = TOAST_TYPE_FAIL;
-                            handler.sendMessage(message_fail);
+                        }
+
+                        @Override
+                        public void OnFinishForecast(List list) {
 
                         }
-                    }
 
-                    @Override
-                    public void OnFinishForecast(List list) {
+                        @Override
+                        public void OnFinishAir(List list,Boolean isAir) {
 
-                    }
+                        }
 
-                    @Override
-                    public void OnFinishAir(List list,Boolean isAir) {
+                        @Override
+                        public void OnFinishLifeStyle(List list) {
 
-                    }
+                        }
 
-                    @Override
-                    public void OnFinishLifeStyle(List list) {
-
-                    }
-
-                    @Override
-                    public boolean OnError(Exception e) {
-                        return false;
-                    }
-                });
-
+                        @Override
+                        public boolean OnError(Exception e) {
+                            return false;
+                        }
+                    });
+                }
+                else if (!isInternet) { //如果没网络
+                   Toast.makeText(AddCityActivity.this,"当前无网络，添加失败",Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

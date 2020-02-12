@@ -40,6 +40,12 @@ public class ImageResource {
             imageView.setImageResource(R.drawable.four_hundred_two);
         } else if (weather.equals("雪")) {
             imageView.setImageResource(R.drawable.four_hundred_ninty_nine);
+        }else if (weather.equals("雾")){
+            imageView.setImageResource(R.drawable.five_hundred_one);
+        }else if (weather.equals("霾")){
+            imageView.setImageResource(R.drawable.five_hundred_two);
+        }else {
+            imageView.setImageResource(R.drawable.nine_hundred_ninty_nine);
         }
     }
 

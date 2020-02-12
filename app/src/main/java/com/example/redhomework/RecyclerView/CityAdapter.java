@@ -68,7 +68,6 @@ public class CityAdapter extends RecyclerView.Adapter  {
              cityViewHolder.tv_city.setText(manager.getCity());
             cityViewHolder.tv_temp.setText(manager.getTemp());
             cityViewHolder.tv_weather.setText(manager.getWeather());
-           // ImageResource.managerSetBackground(cityViewHolder.view,manager.getTime());
             cityViewHolder.view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
