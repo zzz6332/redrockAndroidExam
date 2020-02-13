@@ -1,4 +1,4 @@
-package com.example.redhomework.Class;
+package com.example.redhomework.someClass;
 
 public class Air {
     String PM10;

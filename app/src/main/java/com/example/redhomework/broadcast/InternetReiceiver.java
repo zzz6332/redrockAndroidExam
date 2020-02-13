@@ -1,11 +1,11 @@
-package com.example.redhomework.Broadcast;
+package com.example.redhomework.broadcast;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.widget.Toast;
 
-import com.example.redhomework.Tools.Internet;
+import com.example.redhomework.tools.Internet;
 
 public class InternetReiceiver extends BroadcastReceiver {
     @Override

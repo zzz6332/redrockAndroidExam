@@ -13,35 +13,32 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.redhomework.Activity.CityManagerActivity;
-import com.example.redhomework.Broadcast.InternetReiceiver;
-import com.example.redhomework.Class.Air;
-import com.example.redhomework.Class.LifeStyle;
-import com.example.redhomework.Class.Predict_Weather_day_1_3;
-import com.example.redhomework.HttpUrl.HttpCallBack;
-import com.example.redhomework.HttpUrl.HttpUtil;
-import com.example.redhomework.RecyclerView.MyAdapter;
-import com.example.redhomework.Tools.ActivityCollector;
-import com.example.redhomework.Tools.Broadcast;
-import com.example.redhomework.Tools.ImageResource;
-import com.example.redhomework.Tools.Internet;
+import com.example.redhomework.activity.CityManagerActivity;
+import com.example.redhomework.broadcast.InternetReiceiver;
+import com.example.redhomework.someClass.Air;
+import com.example.redhomework.someClass.LifeStyle;
+import com.example.redhomework.someClass.PredictWeather;
+import com.example.redhomework.httpUrl.HttpCallBack;
+import com.example.redhomework.httpUrl.HttpUtil;
+import com.example.redhomework.recyclerviewAdapter.MyAdapter;
+import com.example.redhomework.tools.ActivityCollector;
+import com.example.redhomework.tools.Broadcast;
+import com.example.redhomework.tools.ImageResource;
+import com.example.redhomework.tools.Internet;
 
-import java.io.BufferedOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    List<Predict_Weather_day_1_3> mlist = new ArrayList();
+    List<PredictWeather> mlist = new ArrayList();
     List<Air> air_list = new ArrayList<>();
     List<LifeStyle> lifeStyle_list = new ArrayList<>();
     SharedPreferences sharedPreferences;
@@ -255,9 +252,9 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
                         //对数据缓存
-                        Predict_Weather_day_1_3 one = mlist.get(0);
-                        Predict_Weather_day_1_3 two = mlist.get(1);
-                        Predict_Weather_day_1_3 three = mlist.get(2);
+                        PredictWeather one = mlist.get(0);
+                        PredictWeather two = mlist.get(1);
+                        PredictWeather three = mlist.get(2);
                         editor.putString("buffer_day_1_date", one.getDate());
                         editor.putString("buffer_day_1_weather", one.getWeather());
                         editor.putString("buffer_day_1_temp_low", one.getTemp_low());

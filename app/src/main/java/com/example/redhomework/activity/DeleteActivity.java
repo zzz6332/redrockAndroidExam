@@ -1,4 +1,4 @@
-package com.example.redhomework.Activity;
+package com.example.redhomework.activity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -9,22 +9,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.session.MediaSession;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
 
 import com.example.redhomework.R;
-import com.example.redhomework.RecyclerView.DeleteAdapter;
-import com.example.redhomework.Tools.ActivityCollector;
+import com.example.redhomework.recyclerviewAdapter.DeleteAdapter;
+import com.example.redhomework.tools.ActivityCollector;
 
 import java.util.ArrayList;
 import java.util.Collections;

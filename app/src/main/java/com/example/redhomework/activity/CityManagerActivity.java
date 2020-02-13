@@ -1,15 +1,13 @@
-package com.example.redhomework.Activity;
+package com.example.redhomework.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -17,19 +15,17 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
 
-import com.example.redhomework.Class.CityManager;
-import com.example.redhomework.HttpUrl.HttpCallBack;
-import com.example.redhomework.HttpUrl.HttpUtil;
+import com.example.redhomework.someClass.CityManager;
+import com.example.redhomework.httpUrl.HttpCallBack;
+import com.example.redhomework.httpUrl.HttpUtil;
 import com.example.redhomework.R;
-import com.example.redhomework.RecyclerView.CityAdapter;
-import com.example.redhomework.Tools.ActivityCollector;
-import com.example.redhomework.Tools.Internet;
+import com.example.redhomework.recyclerviewAdapter.CityAdapter;
+import com.example.redhomework.tools.ActivityCollector;
 
 import java.util.ArrayList;
 import java.util.List;

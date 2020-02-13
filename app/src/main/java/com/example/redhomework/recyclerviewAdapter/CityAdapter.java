@@ -1,4 +1,4 @@
-package com.example.redhomework.RecyclerView;
+package com.example.redhomework.recyclerviewAdapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,11 +11,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.redhomework.Class.CityManager;
+import com.example.redhomework.someClass.CityManager;
 import com.example.redhomework.MainActivity;
 import com.example.redhomework.R;
-import com.example.redhomework.Tools.ActivityCollector;
-import com.example.redhomework.Tools.ImageResource;
+import com.example.redhomework.tools.ActivityCollector;
 
 import java.util.ArrayList;
 import java.util.List;

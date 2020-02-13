@@ -1,12 +1,10 @@
-package com.example.redhomework.HttpUrl;
+package com.example.redhomework.httpUrl;
 
-import android.content.SharedPreferences;
 import android.util.Log;
 
-import com.example.redhomework.Class.Air;
-import com.example.redhomework.Class.LifeStyle;
-import com.example.redhomework.Class.Predict_Weather_day_1_3;
-import com.example.redhomework.MainActivity;
+import com.example.redhomework.someClass.Air;
+import com.example.redhomework.someClass.LifeStyle;
+import com.example.redhomework.someClass.PredictWeather;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HttpUtil {
-    static List<Predict_Weather_day_1_3> mlist = new ArrayList<Predict_Weather_day_1_3>();
+    static List<PredictWeather> mlist = new ArrayList<PredictWeather>();
     static List<Air> air_list = new ArrayList<>();
     static List<LifeStyle> lifeStyle_list = new ArrayList();
     private static String location;
@@ -120,17 +118,17 @@ public class HttpUtil {
                     String temp_low_day_1 = day_1.getString("tmp_min");
                     String temp_high_day_1 = day_1.getString("tmp_max");
                     String weather_day_1 = day_1.getString("cond_txt_d");
-                    Predict_Weather_day_1_3 first = new Predict_Weather_day_1_3(date_day_1, temp_low_day_1, temp_high_day_1, weather_day_1);
+                    PredictWeather first = new PredictWeather(date_day_1, temp_low_day_1, temp_high_day_1, weather_day_1);
                     String date_day_2 = day_2.getString("date");
                     String temp_low_day_2 = day_2.getString("tmp_min");
                     String temp_high_day_2 = day_2.getString("tmp_max");
                     String weather_day_2 = day_2.getString("cond_txt_d");
-                    Predict_Weather_day_1_3 second = new Predict_Weather_day_1_3(date_day_2, temp_low_day_2, temp_high_day_2, weather_day_2);
+                    PredictWeather second = new PredictWeather(date_day_2, temp_low_day_2, temp_high_day_2, weather_day_2);
                     String date_day_3 = day_3.getString("date");
                     String temp_low_day_3 = day_3.getString("tmp_min");
                     String temp_high_day_3 = day_3.getString("tmp_max");
                     String weather_day_3 = day_3.getString("cond_txt_d");
-                    Predict_Weather_day_1_3 third = new Predict_Weather_day_1_3(date_day_3, temp_low_day_3, temp_high_day_3, weather_day_3);
+                    PredictWeather third = new PredictWeather(date_day_3, temp_low_day_3, temp_high_day_3, weather_day_3);
                     mlist.add(first);
                     mlist.add(second);
                     mlist.add(third);

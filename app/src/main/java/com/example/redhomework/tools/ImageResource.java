@@ -1,9 +1,7 @@
-package com.example.redhomework.Tools;
+package com.example.redhomework.tools;
 
 import android.view.View;
 import android.widget.ImageView;
-
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.redhomework.R;
 

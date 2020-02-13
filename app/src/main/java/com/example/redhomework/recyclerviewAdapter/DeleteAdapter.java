@@ -1,4 +1,4 @@
-package com.example.redhomework.RecyclerView;
+package com.example.redhomework.recyclerviewAdapter;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -18,8 +18,6 @@ import com.example.redhomework.R;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import static androidx.constraintlayout.widget.Constraints.TAG;
 
 public class DeleteAdapter extends RecyclerView.Adapter {
    private static int delete_number = 0;

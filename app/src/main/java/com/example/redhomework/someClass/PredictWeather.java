@@ -1,12 +1,12 @@
-package com.example.redhomework.Class;
+package com.example.redhomework.someClass;
 
-public class Predict_Weather_day_1_3 {
+public class PredictWeather {
     String date;
     String temp_low;
     String temp_high;
     String weather;
 
-    public Predict_Weather_day_1_3(String date,String temp_low,String temp_high,String weather){
+    public PredictWeather(String date, String temp_low, String temp_high, String weather){
         this.setDate(date);
         this.setTemp_low(temp_low);
         this.setTemp_high(temp_high);

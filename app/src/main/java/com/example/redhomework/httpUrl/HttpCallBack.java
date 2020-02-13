@@ -1,4 +1,4 @@
-package com.example.redhomework.HttpUrl;
+package com.example.redhomework.httpUrl;
 
 import java.util.List;
 

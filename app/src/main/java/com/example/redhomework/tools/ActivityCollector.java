@@ -1,6 +1,5 @@
-package com.example.redhomework.Tools;
+package com.example.redhomework.tools;
 
-import android.app.ActionBar;
 import android.app.Activity;
 
 import java.util.ArrayList;

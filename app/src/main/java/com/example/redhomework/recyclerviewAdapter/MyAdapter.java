@@ -1,8 +1,7 @@
-package com.example.redhomework.RecyclerView;
+package com.example.redhomework.recyclerviewAdapter;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,12 +11,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.redhomework.Class.Air;
-import com.example.redhomework.Class.LifeStyle;
-import com.example.redhomework.Class.Predict_Weather_day_1_3;
+import com.example.redhomework.someClass.Air;
+import com.example.redhomework.someClass.LifeStyle;
+import com.example.redhomework.someClass.PredictWeather;
 import com.example.redhomework.R;
-import com.example.redhomework.Tools.ImageResource;
-import com.example.redhomework.Tools.Internet;
+import com.example.redhomework.tools.ImageResource;
+import com.example.redhomework.tools.Internet;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +29,7 @@ public class MyAdapter extends RecyclerView.Adapter {
     private Boolean isInternet;
     private Boolean isAir;
     private Context context;
-    private List<Predict_Weather_day_1_3> predict_weather_list = new ArrayList();
+    private List<PredictWeather> predict_weather_list = new ArrayList();
     private List<Air> air_list = new ArrayList<>();
     private List<LifeStyle> lifeStyle_list = new ArrayList<>();
     private SharedPreferences sharedPreferences;
@@ -253,9 +252,9 @@ public class MyAdapter extends RecyclerView.Adapter {
         if (isInternet) {  //如果有网络
             if (holder instanceof Predict_ViewHolder) {
                 if (predict_weather_list.size() != 0) {
-                    Predict_Weather_day_1_3 predict_weather_day_1 = predict_weather_list.get(0);
-                    Predict_Weather_day_1_3 predict_weather_day_2 = predict_weather_list.get(1);
-                    Predict_Weather_day_1_3 predict_weather_day_3 = predict_weather_list.get(2);
+                    PredictWeather predict_weather_day_1 = predict_weather_list.get(0);
+                    PredictWeather predict_weather_day_2 = predict_weather_list.get(1);
+                    PredictWeather predict_weather_day_3 = predict_weather_list.get(2);
                     ((Predict_ViewHolder) holder).tv_date_day_1.setText(predict_weather_day_1.getDate().substring(6, 7) + "月" + predict_weather_day_1.getDate().substring(8, 10) + "日" + "今天");
                     ((Predict_ViewHolder) holder).tv_temp_low_day_1.setText(predict_weather_day_1.getTemp_low() + "°C");
                     ((Predict_ViewHolder) holder).tv_temp_high_day_1.setText("/" + predict_weather_day_1.getTemp_high() + "°C");

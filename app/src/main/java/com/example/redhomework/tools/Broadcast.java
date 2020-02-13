@@ -1,4 +1,4 @@
-package com.example.redhomework.Tools;
+package com.example.redhomework.tools;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

@@ -1,4 +1,4 @@
-package com.example.redhomework.RecyclerView;
+package com.example.redhomework.recyclerviewAdapter;
 
 import android.content.Context;
 import android.content.SharedPreferences;

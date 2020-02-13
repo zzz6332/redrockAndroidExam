@@ -14,10 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.DefaultCity"></activity>
-        <activity android:name=".Activity.DeleteActivity" />
-        <activity android:name=".Activity.AddCityActivity" />
-        <activity android:name=".Activity.CityManagerActivity" />
+        <activity android:name=".activity.DefaultCity"></activity>
+        <activity android:name=".activity.DeleteActivity" />
+        <activity android:name=".activity.AddCityActivity" />
+        <activity android:name=".activity.CityManagerActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

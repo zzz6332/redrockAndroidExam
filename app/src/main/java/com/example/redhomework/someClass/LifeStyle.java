@@ -1,6 +1,4 @@
-package com.example.redhomework.Class;
-
-import java.util.List;
+package com.example.redhomework.someClass;
 
 public class LifeStyle {
 
