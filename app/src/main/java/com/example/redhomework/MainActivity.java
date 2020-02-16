@@ -117,19 +117,7 @@ public class MainActivity extends AppCompatActivity {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         }
-        //----实例化控件
-        view = findViewById(R.id.main_view);
-        tv_location = findViewById(R.id.tv_location);
-        tv_weather = findViewById(R.id.tv_weather);
-        tv_update_time = findViewById(R.id.tv_update_time);
-        tv_temp_now = findViewById(R.id.tv_now_temp);
-        tv_temp_physical = findViewById(R.id.tv_physical_temp);
-        tv_can_see = findViewById(R.id.tv_cansee);
-        iv_weather_type = findViewById(R.id.iv_weather_type);
-        tv_temp = findViewById(R.id.tv_temp);
-        toolbar = findViewById(R.id.toolbar);
-        recyclerView = findViewById(R.id.main_recycler);
-        swipe = findViewById(R.id.main_swipe);
+        initView();   //----实例化控件
         Intent intent = getIntent();   //获取启动活动的intent
         sharedPreferences = getSharedPreferences((getString(R.string.file_name)), MODE_PRIVATE);
         editor = getSharedPreferences((getString(R.string.file_name)), MODE_PRIVATE).edit();
@@ -444,5 +432,19 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_activity, menu);
         return true;
+    }
+    public void initView(){
+        view = findViewById(R.id.main_view);
+        tv_location = findViewById(R.id.tv_location);
+        tv_weather = findViewById(R.id.tv_weather);
+        tv_update_time = findViewById(R.id.tv_update_time);
+        tv_temp_now = findViewById(R.id.tv_now_temp);
+        tv_temp_physical = findViewById(R.id.tv_physical_temp);
+        tv_can_see = findViewById(R.id.tv_cansee);
+        iv_weather_type = findViewById(R.id.iv_weather_type);
+        tv_temp = findViewById(R.id.tv_temp);
+        toolbar = findViewById(R.id.toolbar);
+        recyclerView = findViewById(R.id.main_recycler);
+        swipe = findViewById(R.id.main_swipe);
     }
 }

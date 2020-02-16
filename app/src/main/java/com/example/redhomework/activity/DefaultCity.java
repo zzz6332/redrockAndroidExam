@@ -29,8 +29,6 @@ public class DefaultCity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     Toolbar toolbar;
-    String default_city;
-    String default_city_second;
     Button button_add;
 
     @Override
@@ -119,7 +117,6 @@ public class DefaultCity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         ActivityCollector.removeActivity(this);
-
         Boolean isdefault = sharedPreferences.getBoolean("isdefault", false);
         Boolean isSecond = sharedPreferences.getBoolean("isSecond", false); //是否是第二次设置默认城市
         if (!isdefault && !isSecond) { //如果退出当前活动时，勾选了城市但是没有点击设置默认城市按钮，就remove写入的键值对
