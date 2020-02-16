@@ -44,6 +44,7 @@ PS：在没有添加城市的情况下进入删除城市和设置默认城市的
 PS:晴天的时候是这样的👇，没有找到其他天气的城市所以就没有图了....
 
 ![sun](https://github.com/zzz6332/redrockAndroidExam/blob/master/gif/sun.jpg)
+
 2.4.如果添加了错误的城市，会显示添加错误
 
 ![add_wrong](https://github.com/zzz6332/redrockAndroidExam/blob/master/gif/add_wrong_city.gif)
